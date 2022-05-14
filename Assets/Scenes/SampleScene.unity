@@ -27208,21 +27208,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fa3be025a277349a7086d52dcbf17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &1367070101
-Animation:
+--- !u!95 &1367070101
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367070096}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3251212d0d14c1d429e5d569345ad1eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1807108225
 GameObject:
   m_ObjectHideFlags: 0
@@ -34545,21 +34550,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 3937302791873455997, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 918394765, guid: 09bcbeb0841b12342a6601a3f29efdfb, type: 3}
+    - target: {fileID: 3937302791873455997, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5697430610890549937, guid: b7bd72fee3efa0b4b90d8614d28a0b56, type: 3}
       propertyPath: m_LocalRotation.w

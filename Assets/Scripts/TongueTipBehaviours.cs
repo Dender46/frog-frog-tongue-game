@@ -16,6 +16,7 @@ public class TongueTipBehaviours : MonoBehaviour
     void Start()
     {
         m_Frog = GameObject.Find("/Frog");
+        GetTongueEnd().GetComponent<SpringJoint2D>().connectedAnchor = m_Frog.transform.position;
 
         m_Positions.Add(gameObject);
         m_Positions.Add(GetLastTongueSeg());
@@ -109,7 +110,7 @@ public class TongueTipBehaviours : MonoBehaviour
         joint.dampingRatio = 1.0f;
         joint.frequency = 1.2f;
         joint.autoConfigureDistance = false;
-        joint.connectedAnchor = m_Frog.transform.position;
+        joint.connectedAnchor.Set(m_Frog.transform.position.x, m_Frog.transform.position.y - 0.15f);
         joint.connectedBody = null;
     }
 
