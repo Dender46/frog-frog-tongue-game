@@ -90,7 +90,7 @@ public class TongueTipBehaviours : MonoBehaviour
 
         GameObject tongueEnd = GetTongueEnd();
         Vector2 moveTowardsFrog = m_Frog.transform.position - tongueEnd.transform.position;
-        tongueEnd.GetComponent<Rigidbody2D>().AddForce(moveTowardsFrog * m_RetractionForceMulti * multiplier * Time.deltaTime);
+        tongueEnd.GetComponent<Rigidbody2D>().AddForce(moveTowardsFrog * m_RetractionForce * multiplier * Time.deltaTime);
     }
 
     GameObject GetTongueEnd()

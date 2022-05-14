@@ -334,7 +334,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.20390849
-        value: 0.20754805
+        value: 0.28301978
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -352,7 +352,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.34357515
-        value: 0.20912021
+        value: 0.2845919
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -370,7 +370,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.48045444
-        value: 0.20912021
+        value: 0.2845919
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -388,7 +388,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.62569857
-        value: 0.20912021
+        value: 0.2845919
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -406,7 +406,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.7681513
-        value: 0.21069036
+        value: 0.28616208
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -424,7 +424,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.90780246
-        value: 0.21382931
+        value: 0.28930104
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1847,12 +1847,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2082211958, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
+      propertyPath: m_RetractionForce
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082211958, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
       propertyPath: m_RetractionForceMulti
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2239920073465046380, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
       propertyPath: m_Name
       value: TongueTIP_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239920073465046384, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239920073465046386, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
+      propertyPath: movementSpeed
+      value: 4800000
       objectReference: {fileID: 0}
     - target: {fileID: 2239920073465046387, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
       propertyPath: m_ConnectedRigidBody
