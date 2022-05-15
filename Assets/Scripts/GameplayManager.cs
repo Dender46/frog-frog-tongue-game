@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameplayManager : MonoBehaviour
     public Canvas m_InGameUI;
     public Canvas m_LostGameUI;
     public Canvas m_WonGameUI;
+    public Canvas m_WonWonGameUI;
     
     [Space(10)]
     public AudioClip m_ButtonClick;
@@ -76,6 +78,19 @@ public class GameplayManager : MonoBehaviour
     static public void LoseGame()
     {
 
+    }
+
+    static public void RestartGame(float delay)
+    {
+        instance.m_WonGameUI.gameObject.SetActive(false);
+        instance.m_WonWonGameUI.gameObject.SetActive(true);
+
+        instance.Invoke("RestartGameNow", delay);
+    }
+
+    void RestartGameNow()
+    {
+        SceneManager.LoadScene(0);
     }
 
     static public bool IsGamePlaying()

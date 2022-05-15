@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CakeController : MonoBehaviour
@@ -21,6 +22,7 @@ public class CakeController : MonoBehaviour
         {
             GameplayManager.PlayAudioClip(m_DeathSounds);
             Destroy(gameObject);
+            GameplayManager.RestartGame(10.0f);
         }
     }
 
