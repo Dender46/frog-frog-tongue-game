@@ -27,6 +27,10 @@ public class TongueTipBehaviours : MonoBehaviour
 
     void Update()
     {
+        if (!GameplayManager.IsGamePlaying())
+            return;
+
+
         if (m_SegmentsCount < m_TongueSize && GetDistanceFromLastSegmentToFrog() > 1.0f)
         {
             CreateNewSegment();
@@ -38,7 +42,7 @@ public class TongueTipBehaviours : MonoBehaviour
             GetComponent<TongueTipControls>().DecreaseSpeedBasedOnLength();
         }
 
-        RetractTongue(Input.GetKey(KeyCode.E) ? m_RetractionForceMulti : 1.0f);
+        RetractTongue(/*Input.GetKey(KeyCode.E) ? m_RetractionForceMulti : */1.0f);
     }
 
     void CreateNewSegment()

@@ -17,28 +17,26 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!m_IsStuck)
+        if (!GameplayManager.IsGamePlaying())
         {
-            Vector3 directionToCake = m_Cake.transform.position - transform.position;
-            directionToCake = directionToCake.normalized * m_Speed;
-
-            m_Rigidbody.velocity = directionToCake * Time.fixedDeltaTime;
+            m_Rigidbody.velocity = Vector2.zero;
+            return;
         }
+
+        MoveTowardsCake();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void MoveTowardsCake()
     {
-        if (collision.collider.gameObject.tag == "PlayerTongue")
-        {
-            StickThisToTongue(collision.collider.gameObject);
-            m_IsStuck = true;
-        }
+        if (m_IsStuck)
+            return;
 
-        if (m_IsStuck && collision.collider.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        Vector3 directionToCake = m_Cake.transform.position - transform.position;
+        directionToCake = directionToCake.normalized * m_Speed;
+
+        m_Rigidbody.velocity = directionToCake * Time.fixedDeltaTime;
     }
+
 
     void StickThisToTongue(GameObject tongueSeg)
     {
@@ -51,4 +49,25 @@ public class EnemyController : MonoBehaviour
         joint.frequency = 0.0f;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.tag == "PlayerTongue")
+        {
+            StickThisToTongue(collision.collider.gameObject);
+            m_IsStuck = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
+        if (collider.gameObject.tag == "Cake")
+        {
+
+        }
+    }
 }

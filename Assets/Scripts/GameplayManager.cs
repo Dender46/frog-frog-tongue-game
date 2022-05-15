@@ -17,6 +17,21 @@ public class GameplayManager : MonoBehaviour
 
     private States m_State = States.MainMenu;
 
+    static public GameplayManager instance;
+
+    void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("Instance already exists, destroying 'this'!");
+            Destroy(this);
+        }
+    }
+
     void Update()
     {
         switch (m_State)
@@ -32,16 +47,18 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    static public void StartGame()
     {
-        m_State = States.Playing;
-        m_MainMenuUI.enabled = false;
-        m_InGameUI.enabled = true;
+        instance.m_State = States.Playing;
+        instance.m_MainMenuUI.gameObject.SetActive(false);
+        instance.m_InGameUI.gameObject.SetActive(true);
+        
+        instance.GetComponent<AudioSource>().Play();
     }
 
-    public bool IsGamePlaying()
+    static public bool IsGamePlaying()
     {
-        return m_State == States.Playing;
+        return instance.m_State == States.Playing;
     }
 
 }

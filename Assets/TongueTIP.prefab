@@ -106,8 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3cdaab4ced61c4ea98cc7c4a116dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 350
-  ifKinematicSpeed: 0.005
+  movementSpeed: 450
   speedBasedOnLengthStep: 0
 --- !u!114 &2082211958
 MonoBehaviour:
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TongueSegmentPrefab: {fileID: 8373412874812026229, guid: d1b0405d82384b940b96bfaf7f77837e, type: 3}
-  m_RetractionForce: 4000
+  m_RetractionForce: 5000
   m_RetractionForceMulti: 2
   m_TongueSize: 50
 --- !u!1 &5380937328375692962

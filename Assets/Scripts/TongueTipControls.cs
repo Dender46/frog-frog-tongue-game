@@ -6,14 +6,25 @@ public class TongueTipControls : MonoBehaviour
     
     [SerializeField] float speedBasedOnLengthStep = 1000.0f;
 
-    Rigidbody2D m_Rigidbody2d;
+    Rigidbody2D m_Rigidbody;
 
     void Start()
     {
-        m_Rigidbody2d = GetComponent<Rigidbody2D>();
+        m_Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
+    {
+        if (!GameplayManager.IsGamePlaying())
+        {
+            m_Rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
+        ManageInput();
+    }
+
+    void ManageInput()
     {
         Vector2 movementForce = Vector2.zero;
 
@@ -33,7 +44,7 @@ public class TongueTipControls : MonoBehaviour
             movementForce.y *= 0.8f;
         }
 
-        m_Rigidbody2d.velocity = movementForce * Time.fixedDeltaTime;
+        m_Rigidbody.velocity = movementForce * Time.fixedDeltaTime;
     }
 
     public void IncreaseSpeedBasedOnLength()

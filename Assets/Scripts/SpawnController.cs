@@ -8,6 +8,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private float m_EnemySpawnDistance = 10.0f;
     [SerializeField] private float m_EnemySpawnInterval = 3.0f;
     [SerializeField] private float m_SpawnOffsetFromGround = 0.1f;
+    [SerializeField] private float m_SpawnHardnessMulti = 0.6f;
 
     [Space(10)]
     [SerializeField] private List<Sprite> m_DigitTextures;
@@ -28,6 +29,9 @@ public class SpawnController : MonoBehaviour
 
     void Update()
     {
+        if (!GameplayManager.IsGamePlaying())
+            return;
+
         m_TimePassed += 1.0f * Time.deltaTime;
         m_EnemyCooldown += 1.0f * Time.deltaTime;
 
@@ -38,8 +42,11 @@ public class SpawnController : MonoBehaviour
 
     void TrySpawningEnemy()
     {
-        if (m_EnemyCooldown < m_EnemySpawnInterval)
+        bool isHarder = (m_TimePassed / m_TimePerLevel) > 0.15f;
+        if (m_EnemyCooldown < (isHarder ? m_EnemySpawnInterval * m_SpawnHardnessMulti : m_EnemySpawnInterval))
             return;
+
+        Debug.Log((isHarder ? m_EnemySpawnInterval * m_SpawnHardnessMulti : m_EnemySpawnInterval));
 
         m_EnemyCooldown = 0.0f;
         float enemySpawnOffset = Random.Range(m_SpawnOffsetFromGround, Mathf.PI - m_SpawnOffsetFromGround);
@@ -78,7 +85,5 @@ public class SpawnController : MonoBehaviour
             Vector3 pos = new Vector3(Mathf.Cos(i), Mathf.Sin(i), 0.0f) * m_EnemySpawnDistance + m_Frog.transform.position;
             Gizmos.DrawSphere(pos, 0.25f);
         }
-        
-
     }
 }
