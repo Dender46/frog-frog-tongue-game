@@ -33848,6 +33848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TongueTIP_0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239920073465046386, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
+      propertyPath: movementSpeed
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 2239920073465046387, guid: 7f035b7cae98f20449834630790c3a20, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 

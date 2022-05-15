@@ -3,7 +3,6 @@ using UnityEngine;
 public class TongueTipControls : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 1000.0f;
-    [SerializeField] float ifKinematicSpeed = 0.005f;
     
     [SerializeField] float speedBasedOnLengthStep = 1000.0f;
 
@@ -28,23 +27,13 @@ public class TongueTipControls : MonoBehaviour
             movementForce.x += movementSpeed;
 
         // Limit diagonal boost movement
-        if (movementForce.x > 0.0f && movementForce.y > 0.0f)
+        if (movementForce.x != 0.0f && movementForce.y != 0.0f)
         {
-            movementForce.x *= 0.5f;
-            movementForce.y *= 0.5f;
+            movementForce.x *= 0.8f;
+            movementForce.y *= 0.8f;
         }
 
-        if (m_Rigidbody2d.isKinematic)
-        {
-            movementForce *= ifKinematicSpeed;
-            movementForce *= Time.deltaTime;
-            Vector3 newPos = new Vector3(transform.position.x + movementForce.x, transform.position.y + movementForce.y, transform.position.z);
-            m_Rigidbody2d.position = newPos;
-        }
-        else
-        {
-            m_Rigidbody2d.AddForce(movementForce * Time.deltaTime);
-        }
+        m_Rigidbody2d.velocity = movementForce * Time.fixedDeltaTime;
     }
 
     public void IncreaseSpeedBasedOnLength()

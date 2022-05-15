@@ -6,6 +6,7 @@ public class TongueTipBehaviours : MonoBehaviour
     [SerializeField] private GameObject m_TongueSegmentPrefab;
     [SerializeField] private float m_RetractionForce = 100.0f;
     [SerializeField] private float m_RetractionForceMulti = 10.0f;
+    [SerializeField] private int m_TongueSize = 50;
 
     private GameObject m_Frog;
     
@@ -26,7 +27,7 @@ public class TongueTipBehaviours : MonoBehaviour
 
     void Update()
     {
-        if (GetDistanceFromLastSegmentToFrog() > 1.0f)
+        if (m_SegmentsCount < m_TongueSize && GetDistanceFromLastSegmentToFrog() > 1.0f)
         {
             CreateNewSegment();
             GetComponent<TongueTipControls>().IncreaseSpeedBasedOnLength();
