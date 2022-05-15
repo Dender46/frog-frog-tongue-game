@@ -9,11 +9,12 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private float m_EnemySpawnInterval = 3.0f;
     [SerializeField] private float m_SpawnOffsetFromGround = 0.1f;
 
-    [Space]
-    [SerializeField] private const int m_TimePerLevel = 60;
+    [Space(10)]
     [SerializeField] private List<Sprite> m_DigitTextures;
+    [SerializeField] private int m_TimePerLevel = 60;
     [SerializeField] private Image m_TimerFirstDigit;
     [SerializeField] private Image m_TimerSecondDigit;
+    [SerializeField] private Image m_TimerThirdDigit;
 
     private GameObject m_Frog;
 
@@ -53,12 +54,15 @@ public class SpawnController : MonoBehaviour
         if (leftTime < 0)
             return;
 
-        int firstDigit = leftTime / 10;
+        int firstDigit = leftTime / 100;
         
         m_TimerFirstDigit.sprite = m_DigitTextures[firstDigit];
 
-        int secondDigit = leftTime % 10;
+        int secondDigit = (leftTime / 10) % 10;
         m_TimerSecondDigit.sprite = m_DigitTextures[secondDigit];
+
+        int thirdDigit = leftTime % 10;
+        m_TimerThirdDigit.sprite = m_DigitTextures[thirdDigit];
     }
 
 
