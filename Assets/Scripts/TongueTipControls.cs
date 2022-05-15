@@ -15,7 +15,7 @@ public class TongueTipControls : MonoBehaviour
 
     void Update()
     {
-        if (!GameplayManager.IsGamePlaying() && !GameplayManager.IsGameWon())
+        if (!GameplayManager.IsGamePlaying() && !GameplayManager.IsGameWon() || GameplayManager.IsGameLost())
         {
             m_Rigidbody.velocity = Vector2.zero;
             return;

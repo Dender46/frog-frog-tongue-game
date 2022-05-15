@@ -38,21 +38,6 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        switch (m_State)
-        {
-            case States.MainMenu:
-                break;
-            case States.Playing:
-                break;
-            case States.Won:
-                break;
-            case States.Lost:
-                break;
-        }
-    }
-
     static public void StartGame()
     {
         instance.m_State = States.Playing;
@@ -77,7 +62,12 @@ public class GameplayManager : MonoBehaviour
 
     static public void LoseGame()
     {
+        if (instance.m_State == States.Lost)
+            return;
 
+        instance.m_State = States.Lost;
+        instance.m_LostGameUI.gameObject.SetActive(true);
+        instance.Invoke("RestartGameNow", 7.0f);
     }
 
     static public void RestartGame(float delay)
@@ -101,6 +91,11 @@ public class GameplayManager : MonoBehaviour
     static public bool IsGameWon()
     {
         return instance.m_State == States.Won;
+    }
+
+    static public bool IsGameLost()
+    {
+        return instance.m_State == States.Lost;
     }
 
     static public void PlayAudioClip(AudioClip clip)

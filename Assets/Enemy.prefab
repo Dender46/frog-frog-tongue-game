@@ -76,6 +76,8 @@ MonoBehaviour:
   m_DeathSounds:
   - {fileID: 8300000, guid: a766c8e9e79612845a48fe97836f81e2, type: 3}
   - {fileID: 8300000, guid: cc794faad385579468b3d3e517f9a9dd, type: 3}
+  m_EatingSounds:
+  - {fileID: 8300000, guid: 86c929aa29b66b049b892e14dd7f2f17, type: 3}
   m_Speed: 150
 --- !u!61 &412726862
 BoxCollider2D:

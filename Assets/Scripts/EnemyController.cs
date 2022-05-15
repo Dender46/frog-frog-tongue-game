@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject m_Cake;
     [SerializeField] private List<AudioClip> m_StickingSounds;
     [SerializeField] private List<AudioClip> m_DeathSounds;
+    [SerializeField] private List<AudioClip> m_EatingSounds;
     [SerializeField] private float m_Speed = 1.0f;
     
     private Rigidbody2D m_Rigidbody;
@@ -94,7 +95,8 @@ public class EnemyController : MonoBehaviour
 
         if (collider.gameObject.tag == "Cake")
         {
-
+            GameplayManager.PlayAudioClip(m_EatingSounds);
+            GameplayManager.LoseGame();
         }
     }
 }
