@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class TongueDrawManager : MonoBehaviour
 {
+    [SerializeField] Vector3 m_TongueEndOffset = new Vector3(0.0f, -0.15f, 0.0f);
+
     private LineRenderer m_TongueRenderer;
     private TongueTipBehaviours m_TongueTipBehaviours;
-
-    Vector3 m_TongueEndOffset = new Vector3(0.0f, -0.15f, 0.0f);
 
     void Start()
     {
