@@ -33,7 +33,11 @@ public class EnemyController : MonoBehaviour
             StickThisToTongue(collision.collider.gameObject);
             m_IsStuck = true;
         }
-            
+
+        if (m_IsStuck && collision.collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void StickThisToTongue(GameObject tongueSeg)

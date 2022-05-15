@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1367070100}
   m_Layer: 0
   m_Name: Frog
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,8 +325,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.80730784
-        value: 0.2166482
+        time: 0.80019724
+        value: 0.26665127
         inSlope: 0.025857067
         outSlope: 0.025857067
         tangentMode: 0
@@ -334,8 +334,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.843622
-        value: 0.14251088
+        time: 0.8507326
+        value: 0.21750782
         inSlope: 0.028815947
         outSlope: 0.028815947
         tangentMode: 0
@@ -343,8 +343,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.87990797
-        value: 0.21289434
+        time: 0.90000004
+        value: 0.29999912
         inSlope: 0.023616182
         outSlope: 0.023616182
         tangentMode: 0
@@ -352,17 +352,17 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.93855876
-        value: 0.15076098
-        inSlope: 0.011718276
-        outSlope: 0.011718276
+        time: 0.9492399
+        value: 0.22575793
+        inSlope: 0.5931108
+        outSlope: 0.5931108
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 1
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.14464507
+        time: 0.99644125
+        value: 0.3363102
         inSlope: 0
         outSlope: 0
         tangentMode: 0
