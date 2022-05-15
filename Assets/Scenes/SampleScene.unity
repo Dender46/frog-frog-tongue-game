@@ -27709,8 +27709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EnemyPrefab: {fileID: 2829892452411326835, guid: b0568c4ded87e2445a0ce54b95768335, type: 3}
   m_EnemySpawnDistance: 38
-  m_EnemySpawnInterval: 5
+  m_EnemySpawnInterval: 4
   m_SpawnOffsetFromGround: 0.2
+  m_SpawnHardnessMulti: 0.5
   m_DigitTextures:
   - {fileID: -220385018, guid: 192645571aca07049918809ea8eff322, type: 3}
   - {fileID: -1959092083, guid: 192645571aca07049918809ea8eff322, type: 3}
@@ -27759,6 +27760,7 @@ MonoBehaviour:
   m_InGameUI: {fileID: 1458140477}
   m_LostGameUI: {fileID: 0}
   m_WonGameUI: {fileID: 0}
+  m_ButtonClick: {fileID: 8300000, guid: df27d60ca75925343bd96604d2ce6d35, type: 3}
 --- !u!82 &1795756174
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27769,7 +27771,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: df27d60ca75925343bd96604d2ce6d35, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

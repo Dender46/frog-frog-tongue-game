@@ -69,8 +69,15 @@ public class GameplayManager : MonoBehaviour
     {
         instance.GetComponent<AudioSource>().PlayOneShot(clip);
     }
+
     static public void PlayAudioClip(List<AudioClip> clips)
     {
         instance.GetComponent<AudioSource>().PlayOneShot(clips[Random.Range(0, clips.Count-1)]);
     }
+
+    static public void OpenMinijamWebsite()
+    {
+        Application.OpenURL("https://itch.io/jam/mini-jam-106-frogs");
+    }
+
 }
