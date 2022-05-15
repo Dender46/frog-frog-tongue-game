@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Vector3 directionToCake = m_Cake.transform.position - transform.position;
-        directionToCake = directionToCake.normalized;// * m_Speed;
+        directionToCake = directionToCake.normalized * m_Speed;
         Debug.Log(directionToCake);
         Debug.Log(directionToCake.magnitude);
 
