@@ -69,6 +69,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Cake: {fileID: 0}
+  m_StickingSounds:
+  - {fileID: 8300000, guid: 226947e3750ab1844ac0c1b0f516c18c, type: 3}
+  - {fileID: 8300000, guid: ed40e24e763103049ab9e9b92f808d59, type: 3}
+  - {fileID: 8300000, guid: 40f1419af7f87ae4fa4ddfbe0d694a97, type: 3}
+  m_DeathSounds:
+  - {fileID: 8300000, guid: a766c8e9e79612845a48fe97836f81e2, type: 3}
+  - {fileID: 8300000, guid: cc794faad385579468b3d3e517f9a9dd, type: 3}
   m_Speed: 150
 --- !u!61 &412726862
 BoxCollider2D:

@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject m_Cake;
+    [SerializeField] private List<AudioClip> m_StickingSounds;
+    [SerializeField] private List<AudioClip> m_DeathSounds;
     [SerializeField] private float m_Speed = 1.0f;
     
     private Rigidbody2D m_Rigidbody;
@@ -55,6 +58,7 @@ public class EnemyController : MonoBehaviour
         {
             StickThisToTongue(collision.collider.gameObject);
             m_IsStuck = true;
+            GameplayManager.PlayAudioClip(m_StickingSounds);
         }
     }
 
@@ -62,6 +66,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            GameplayManager.PlayAudioClip(m_DeathSounds);
             Destroy(gameObject);
         }
 

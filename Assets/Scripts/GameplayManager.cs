@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class GameplayManager : MonoBehaviour
     public Canvas m_InGameUI;
     public Canvas m_LostGameUI;
     public Canvas m_WonGameUI;
+    
+    [Space(10)]
+    public AudioClip m_ButtonClick;
 
     enum States
     {
@@ -53,7 +57,7 @@ public class GameplayManager : MonoBehaviour
         instance.m_MainMenuUI.gameObject.SetActive(false);
         instance.m_InGameUI.gameObject.SetActive(true);
         
-        instance.GetComponent<AudioSource>().Play();
+        instance.GetComponent<AudioSource>().PlayOneShot(instance.m_ButtonClick);
     }
 
     static public bool IsGamePlaying()
@@ -61,4 +65,12 @@ public class GameplayManager : MonoBehaviour
         return instance.m_State == States.Playing;
     }
 
+    static public void PlayAudioClip(AudioClip clip)
+    {
+        instance.GetComponent<AudioSource>().PlayOneShot(clip);
+    }
+    static public void PlayAudioClip(List<AudioClip> clips)
+    {
+        instance.GetComponent<AudioSource>().PlayOneShot(clips[Random.Range(0, clips.Count-1)]);
+    }
 }
