@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1367070101}
   - component: {fileID: 1367070100}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Frog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
