@@ -29,15 +29,24 @@ public class SpawnController : MonoBehaviour
 
     void Update()
     {
-        if (!GameplayManager.IsGamePlaying())
+        if (!GameplayManager.IsGamePlaying() || GameplayManager.IsGameWon())
             return;
 
         m_TimePassed += 1.0f * Time.deltaTime;
         m_EnemyCooldown += 1.0f * Time.deltaTime;
 
+        Color color = Color.white;
+        color = Color.HSVToRGB(0.0f, (1.0f - m_TimePassed / m_TimePerLevel) * 0.4f, 1.0f);
+        GameObject.Find("/Cake").GetComponent<SpriteRenderer>().color = color;
+
         TrySpawningEnemy();
         
         Timer();
+
+        if (m_TimePassed >= m_TimePerLevel)
+        {
+            GameplayManager.WinGame();
+        }
     }
 
     void TrySpawningEnemy()

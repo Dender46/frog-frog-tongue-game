@@ -27,7 +27,7 @@ public class TongueTipBehaviours : MonoBehaviour
 
     void Update()
     {
-        if (!GameplayManager.IsGamePlaying())
+        if (!GameplayManager.IsGamePlaying() && !GameplayManager.IsGameWon())
             return;
 
 

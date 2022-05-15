@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6816628014815356420}
   - component: {fileID: 6816628014815356421}
   - component: {fileID: 616584501858752499}
+  - component: {fileID: 6164549978604927770}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Cake
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.55}
   m_EdgeRadius: 0
+--- !u!114 &6164549978604927770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816628014815356422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8eab39dc8dc6d4297ed1bd63e90b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,13 +20,18 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!GameplayManager.IsGamePlaying())
+        if (GameplayManager.IsGamePlaying())
+        {
+            MoveTowardsCake();
+        }
+        else if (GameplayManager.IsGameWon())
+        {
+            MoveAwayFromCake();
+        }
+        else
         {
             m_Rigidbody.velocity = Vector2.zero;
-            return;
         }
-
-        MoveTowardsCake();
     }
 
     void MoveTowardsCake()
@@ -40,6 +45,23 @@ public class EnemyController : MonoBehaviour
         m_Rigidbody.velocity = directionToCake * Time.fixedDeltaTime;
     }
 
+    void MoveAwayFromCake()
+    {
+        if (m_IsStuck)
+            return;
+
+        // Game was won
+        if (!m_Cake)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 directionToCake = transform.position - m_Cake.transform.position;
+        directionToCake = directionToCake.normalized * m_Speed;
+
+        m_Rigidbody.velocity = directionToCake * Time.fixedDeltaTime;
+    }
 
     void StickThisToTongue(GameObject tongueSeg)
     {

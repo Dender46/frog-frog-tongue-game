@@ -60,9 +60,32 @@ public class GameplayManager : MonoBehaviour
         instance.GetComponent<AudioSource>().PlayOneShot(instance.m_ButtonClick);
     }
 
+    static public void WinGame()
+    {
+        if (instance.m_State == States.Won)
+            return;
+
+        instance.m_State = States.Won;
+        GameObject.Find("/CakeTable").GetComponent<Collider2D>().isTrigger = false;
+        GameObject.Find("/Cake").GetComponent<Collider2D>().isTrigger = false;
+        GameObject.Find("/Cake").GetComponent<Rigidbody2D>().isKinematic = false;
+
+        instance.m_WonGameUI.gameObject.SetActive(true);
+    }
+
+    static public void LoseGame()
+    {
+
+    }
+
     static public bool IsGamePlaying()
     {
         return instance.m_State == States.Playing;
+    }
+
+    static public bool IsGameWon()
+    {
+        return instance.m_State == States.Won;
     }
 
     static public void PlayAudioClip(AudioClip clip)
