@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6816628014815356420}
   - component: {fileID: 6816628014815356421}
   - component: {fileID: 616584501858752499}
-  - component: {fileID: 6164549978604927770}
+  - component: {fileID: 1082467341}
+  - component: {fileID: 1082467342}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Cake
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: -0.2226313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,9 +111,30 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.55}
+  m_Size: {x: 0.7661972, y: 0.37362385}
   m_EdgeRadius: 0
---- !u!114 &6164549978604927770
+--- !u!50 &1082467341
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816628014815356422}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1082467342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +143,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6816628014815356422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8eab39dc8dc6d4297ed1bd63e90b0b, type: 3}
+  m_Script: {fileID: 11500000, guid: d748b3d850f2230438bd54bd7f9a5d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StickingSounds:
+  - {fileID: 8300000, guid: ed40e24e763103049ab9e9b92f808d59, type: 3}
+  - {fileID: 8300000, guid: 40f1419af7f87ae4fa4ddfbe0d694a97, type: 3}
+  - {fileID: 8300000, guid: 226947e3750ab1844ac0c1b0f516c18c, type: 3}
+  m_DeathSounds:
+  - {fileID: 8300000, guid: a766c8e9e79612845a48fe97836f81e2, type: 3}
+  - {fileID: 8300000, guid: cc794faad385579468b3d3e517f9a9dd, type: 3}
