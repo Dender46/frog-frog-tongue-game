@@ -52,10 +52,10 @@ public class SpawnController : MonoBehaviour
     void TrySpawningEnemy()
     {
         bool isHarder = (m_TimePassed / m_TimePerLevel) > 0.15f;
-        if (m_EnemyCooldown < (isHarder ? m_EnemySpawnInterval * m_SpawnHardnessMulti : m_EnemySpawnInterval))
+        float spawnInterval = isHarder ? m_EnemySpawnInterval * m_SpawnHardnessMulti : m_EnemySpawnInterval;
+        
+        if (m_EnemyCooldown < spawnInterval)
             return;
-
-        Debug.Log((isHarder ? m_EnemySpawnInterval * m_SpawnHardnessMulti : m_EnemySpawnInterval));
 
         m_EnemyCooldown = 0.0f;
         float enemySpawnOffset = Random.Range(m_SpawnOffsetFromGround, Mathf.PI - m_SpawnOffsetFromGround);

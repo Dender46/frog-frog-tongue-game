@@ -3,8 +3,6 @@ using UnityEngine;
 public class TongueTipControls : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 1000.0f;
-    
-    [SerializeField] float speedBasedOnLengthStep = 1000.0f;
 
     Rigidbody2D m_Rigidbody;
 
@@ -45,15 +43,5 @@ public class TongueTipControls : MonoBehaviour
         }
 
         m_Rigidbody.velocity = movementForce * Time.fixedDeltaTime;
-    }
-
-    public void IncreaseSpeedBasedOnLength()
-    {
-        movementSpeed += speedBasedOnLengthStep;
-    }
-
-    public void DecreaseSpeedBasedOnLength()
-    {
-        movementSpeed -= speedBasedOnLengthStep;
     }
 }

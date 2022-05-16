@@ -7,11 +7,13 @@ public class TongueDrawManager : MonoBehaviour
 
     private LineRenderer m_TongueRenderer;
     private TongueTipBehaviours m_TongueTipBehaviours;
+    private GameObject m_Frog;
 
     void Start()
     {
         m_TongueRenderer = GetComponent<LineRenderer>();
         m_TongueTipBehaviours = GameObject.Find("/TongueTIP_0").GetComponent<TongueTipBehaviours>();
+        m_Frog = GameObject.Find("/Frog");
     }
 
     void Update()
@@ -24,6 +26,6 @@ public class TongueDrawManager : MonoBehaviour
             m_TongueRenderer.SetPosition(i, transforms[i].transform.position);
         }
 
-        m_TongueRenderer.SetPosition(m_TongueRenderer.positionCount-1, transforms[transforms.Count-1].transform.position + m_TongueEndOffset);
+        m_TongueRenderer.SetPosition(m_TongueRenderer.positionCount-1, m_Frog.transform.position + m_TongueEndOffset);
     }
 }
