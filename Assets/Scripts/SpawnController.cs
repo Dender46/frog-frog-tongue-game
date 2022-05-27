@@ -18,6 +18,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private Image m_TimerThirdDigit;
 
     private GameObject m_Frog;
+    private GameObject m_Cake;
 
     public float m_TimePassed;
     public float m_EnemyCooldown;
@@ -25,6 +26,7 @@ public class SpawnController : MonoBehaviour
     void Start()
     {
         m_Frog = GameObject.Find("/Frog");
+        m_Cake = GameObject.Find("/Cake");
     }
 
     void Update()
@@ -35,9 +37,8 @@ public class SpawnController : MonoBehaviour
         m_TimePassed += 1.0f * Time.deltaTime;
         m_EnemyCooldown += 1.0f * Time.deltaTime;
 
-        Color color = Color.white;
-        color = Color.HSVToRGB(0.0f, (1.0f - m_TimePassed / m_TimePerLevel) * 0.4f, 1.0f);
-        GameObject.Find("/Cake").GetComponent<SpriteRenderer>().color = color;
+        Color color = Color.HSVToRGB(0.0f, (1.0f - m_TimePassed / m_TimePerLevel) * 0.4f, 1.0f);
+        m_Cake.GetComponent<SpriteRenderer>().color = color;
 
         TrySpawningEnemy();
         
@@ -61,7 +62,8 @@ public class SpawnController : MonoBehaviour
         float enemySpawnOffset = Random.Range(m_SpawnOffsetFromGround, Mathf.PI - m_SpawnOffsetFromGround);
 
         Vector3 pos = new Vector3(Mathf.Cos(enemySpawnOffset), Mathf.Sin(enemySpawnOffset), 0.0f) * m_EnemySpawnDistance + m_Frog.transform.position;
-        Instantiate(m_EnemyPrefab, pos, Quaternion.identity);
+        GameObject newEnemy = Instantiate(m_EnemyPrefab, pos, Quaternion.identity);
+        newEnemy.transform.parent = GameObject.Find("/EnemyList").transform;
     }
 
     void Timer()

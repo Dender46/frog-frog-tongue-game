@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TongueTipBehaviours : MonoBehaviour
+public class TongueBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject m_TongueSegmentPrefab;
     [SerializeField] private float m_RetractionForce = 100.0f;
@@ -17,17 +17,14 @@ public class TongueTipBehaviours : MonoBehaviour
         m_Frog = GameObject.Find("/Frog");
         
         m_Positions.Add(gameObject);
-        m_Positions.Add(GameObject.Find("/TongueSEG_1"));
-        m_Positions.Add(GameObject.Find("/TongueEND_2"));
+        m_Positions.Add(GameObject.Find("/Frog/TongueSEG_1"));
+        m_Positions.Add(GameObject.Find("/Frog/TongueEND_2"));
 
         GetTongueEND().GetComponent<SpringJoint2D>().connectedAnchor = m_Frog.transform.position;
     }
 
     void Update()
     {
-        if (m_Positions[m_Positions.Count-1] == null)
-            Debug.Log("");
-
         if (!GameplayManager.IsGamePlaying() && !GameplayManager.IsGameWon())
             return;
 
@@ -49,6 +46,8 @@ public class TongueTipBehaviours : MonoBehaviour
 
         // Create new segment
         GameObject newSegment = Instantiate(m_TongueSegmentPrefab, GetNextSegmentPosition(), Quaternion.identity);
+        newSegment.transform.parent = m_Frog.transform;
+
         SpringJoint2D newSegmentJoint = newSegment.GetComponent<SpringJoint2D>();
         AssignTongueENDJointProperties(newSegmentJoint);
 
